@@ -232,12 +232,4 @@ function changeHobbiesContent() {
 // 5초마다 변경
 setInterval(changeHobbiesContent, 10000);
 
-//오류 무시
-const video = document.querySelector("video");
-video.play().catch(err => {
-  if (err.name !== "AbortError") {
-    console.error(err); // AbortError가 아닐 때만 표시
-  }
-});
-
 
