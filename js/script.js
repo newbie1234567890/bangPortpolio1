@@ -5,7 +5,7 @@ $(document).on('click','a[href="#"]', function(e){
 
 /* 02. 스크롤시 on클래스 부여 */
 $(window).on('scroll resize',function(){
-    scrollTop = $(document).scrollTop()
+    let scrollTop = $(document).scrollTop()
     fixTab()
 	fixBtn()
     fix()
@@ -84,11 +84,11 @@ $(window).on("scroll", function () {
     lastScroll = currentScroll;
 });
 
-/* 스크롤라 */+
+/* 스크롤라 */
 $(function(){
     $('.animate').scrolla({
-        moblie: true,
-        once:true
+        mobile: true,
+        once: false,
     })
 });
 
@@ -105,7 +105,7 @@ gsap.registerPlugin(ScrollTrigger)
 gsap.utils.toArray('.clonecoding ul li a').forEach(function(a){
     gsap.timeline({
         scrollTrigger:{
-            trigger: clonecoding,
+            trigger: ".clonecoding",
             start:'20% 60%',
             toggleClass:{targets: a, className: 'active'},
             //markers:true,
@@ -222,7 +222,11 @@ function changeHobbiesContent() {
   // 영상 교체
   videoEl.src = hobbiesData[currentIndex].video;
   videoEl.load();
-  videoEl.play();
+
+  // 영상 준비가 되면 재생
+    videoEl.addEventListener("canplay", function onCanPlay() {
+        videoEl.play().catch(err => console.log("재생 에러:", err));
+    }, { once: true });
 
   // 글자 교체
   titleEl.textContent = hobbiesData[currentIndex].title;
@@ -231,5 +235,79 @@ function changeHobbiesContent() {
 
 // 5초마다 변경
 setInterval(changeHobbiesContent, 10000);
+
+
+
+
+const skills = [
+  { img: "./img/skill11.png", text: "TypeScript" },
+  { img: "./img/skill12.png", text: "Vite" },
+  { img: "./img/skill13.png", text: "MongoDB" },
+  { img: "./img/skill14.png", text: "PWA" },
+  { img: "./img/skill15.png", text: "Ngrok" },
+  { img: "./img/skill16.png", text: "GPT" },
+  { img: "./img/skill17.png", text: "Vercel" },
+  { img: "./img/skill18.png", text: "jQuery" },
+  { img: "./img/skill19.png", text: "NPM" },
+  { img: "./img/skill20.png", text: "GSAP" },
+];
+
+const listItems = document.querySelectorAll("#skillList li");
+
+// 초기 상태 저장
+const originalData = Array.from(listItems).map(li => ({
+  img: li.querySelector("img").src,
+  text: li.querySelector("p").textContent
+}));
+
+let currentIndex2 = 0;   // li 순환 인덱스
+let skillIndex = 0;      // skills 배열 순환 인덱스
+let direction = 1;       // 1이면 skills → 끝까지, -1이면 originalData → 처음까지
+
+function changeSkill() {
+  const li = listItems[currentIndex2];
+
+  // 현재 방향에 따라 적용할 데이터 결정
+  const nextData = direction === 1 ? skills[skillIndex] : originalData[currentIndex2];
+
+  // fade out
+  li.classList.add("fade-out");
+
+  setTimeout(() => {
+    li.querySelector("img").src = nextData.img;
+    li.querySelector("p").textContent = nextData.text;
+
+    li.classList.remove("fade-out");
+    li.classList.add("fade-in");
+
+    setTimeout(() => {
+      li.classList.remove("fade-in");
+    }, 800);
+  }, 800);
+
+  // 인덱스 업데이트
+  currentIndex2++;
+
+  if (direction === 1) {
+    skillIndex++;
+    if (skillIndex >= skills.length) {
+      // skills 끝까지 갔으면 원래 데이터로 돌아가는 모드로 전환
+      direction = -1;
+      currentIndex2 = 0; // 다시 처음 li부터 원래대로 돌림
+    }
+  } else {
+    if (currentIndex2 >= listItems.length) {
+      // 원래 데이터 복구 완료 → 다시 skills 순환 시작
+      direction = 1;
+      currentIndex2 = 0;
+      skillIndex = 0;
+    }
+  }
+}
+
+// 2초마다 실행
+setInterval(changeSkill, 2000);
+
+
 
 

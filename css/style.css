@@ -17,24 +17,22 @@ header .headerWrap h1{font-family: "Convergence", sans-serif; font-weight: 400; 
 font-size: 32px;}
 header .headerWrap h1 a{display: flex; align-items: center;}
 header .headerWrap h1 img{width: 40px; height: 40px;}
-header .headerWrap ul{margin-left: 45px; display: flex; width: 50%; font-size: 18px;
-font-weight: 500; flex: 1;}
+header .headerWrap ul{margin-left: 45px; display: flex; width: 50%; font-weight: 500; flex: 1;}
 header .headerWrap ul li{margin: 0; width: 12%; text-align: center; font-size: 1.1rem;}
 header .headerWrap .menu span{content:''; width: 34px; height: 3px; display: block; background: #000; border-radius: 50px; margin-bottom: 7px; transition: all 0.5s;}
 header .headerWrap .menu span:nth-child(3){margin-bottom: 0;}
 
 header .headerWrap ul li:hover{color: #00B2FF; transition: all 0.3s;}
 
-header .headerTab{position: fixed; top: 0; width: 100%; border-radius: 30px 30px 20px 20px; box-sizing: border-box; left: 50%; transform: translateX(-50%); padding: 0 35px; opacity: 0; background: linear-gradient(rgba(255,255,255,0), rgba(238, 238, 238, 0.8));backdrop-filter:blur(10px); transition: all 0.5s; border: 1px solid #E6E6E6; border-top: none; z-index: 5; height: 0; }
+header .headerTab{position: fixed; top: 0; width: 100%; border-radius: 30px 30px 20px 20px; box-sizing: border-box; left: 50%; transform: translateX(-50%); padding: 0 35px; display: none; background: linear-gradient(rgba(255,255,255,0), rgba(238, 238, 238, 0.8));backdrop-filter:blur(10px); transition: all 0.5s; border: 1px solid #E6E6E6; border-top: none; z-index: 5; height: 0; }
 header .headerTab .headerTabInner{ display: flex; margin:0 34px 0 180px;}
 header .headerTab ul{margin: 85px 0 0; width: 12%;}
 header .headerTab ul li{margin-bottom: 20px;  transition: all 0.5s; text-align: center;}
 header .headerTab ul li:hover{color: #00B2FF; transition: all 0.5s;}
-header.active .headerTab{opacity: 1; height: auto;}
+header.active .headerTab{display: block; height: auto;}
 header.active .menu span:nth-child(1){transform: rotate(45deg); margin: 0; transition: all 0.5s; position: absolute;}
 header.active .menu span:nth-child(2){display: none;}
 header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; transition: all 0.5s;}
-
 
 
 
@@ -46,11 +44,11 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 .main .mainTitle{position: relative; }
 .main .mainTitle p{font-family: "Covered By Your Grace", cursive; font-weight: 400; font-style: normal; color: #00B2FF; font-size: 60px;}
 .main .mainTitle h2{font-size: 120px; font-family: 'inter'; line-height: 85%; letter-spacing: -1.5px;}
-.main .mainTitle img{position: absolute; top: 68%; left: 50%; transform: translate(-50%,-50%); opacity: 0.3; width: 508px; height: 508px;}
+.main .mainTitle img{position: absolute; top: 68%; left: 50%; transform: translate(-50%,-50%); opacity: 0.3; width: 508px; height: 508px; animation: mainRotate 20s linear infinite;}
 .main .more{display: block; font-family: 'inter',sans-serif; background: #00B2FF; border-radius: 50px; margin: 72px auto 0; width: 160px;height: 50px; color: #fff; text-align: center; align-content: center;}
-.main .designed{font-family: 'Noto sans', sans-serif; font-size: 20px; position: relative; width: 500px; margin: 92px auto 0;}
-.main .designed::before{content: ''; display: block; width: 123px; height: 1px; position: absolute; top: 50%; left: -123px; background: #000;}
-.main .designed::after{content: ''; display: block; width: 123px; height: 1px; position: absolute; top: 50%; right: -123px; background: #000;}
+.main .designed{font-family: 'Noto sans', sans-serif; font-size: 20px; position: relative; width: 40%; margin: 92px auto 0;}
+.main .designed::before{content: ''; display: block; width: 25%; height: 1px; position: absolute; top: 50%; left: -25%; background: #000;}
+.main .designed::after{content: ''; display: block; width: 25%; height: 1px; position: absolute; top: 50%; right: -25%; background: #000;}
 
 .main .tab{position: fixed; top: 50%; transform: translateY(-50%); left: 7.5%; z-index: 1000;}
 .main .tab li{position: relative; width: 20px; height: 20px;margin-bottom: 12px; }
@@ -68,8 +66,10 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 
 
 
-
-
+@keyframes mainRotate {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 /* about me */
 .aboutMe{width: 100%; margin: 0 auto; position: relative; display: flex; justify-content: center; }
@@ -85,7 +85,7 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 .aboutMe ul li .icon{width: auto;}
 .aboutMe ul li .tit{display: flex; align-items: center; font-family: 'Noto sans KR',sans-serif; font-size: 32px; letter-spacing: -2px; font-weight: bold; margin: 16px 0 8px;}
 .aboutMe ul li .tit img{margin-right: 8px;}
-.aboutMe ul li .txt{font-family: 'Noto sans KR', sans-serif; font-size: 18px; letter-spacing: -2px; font-weight: 300; color: #b8b8b8; width: 90%;}
+.aboutMe ul li .txt{font-family: 'Noto sans KR', sans-serif; font-size: 18px; letter-spacing: -2px; font-weight: 300; color: #a9a9a9; width: 90%;}
 .aboutMe ul li .txt span{font-weight: bold;}
 
 .aboutMe .title.on{position: sticky; top: 28%; left: 0%;}
@@ -144,13 +144,26 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 .skill .skillBottomBox ul{position: relative; display: flex; align-items: center; justify-content: space-between; width: 100%; margin: 0 auto; flex-wrap: wrap;}
 .skill .skillBottomBox ul li{width: 20%; height: 50%; box-sizing: border-box;}
 .skill .skillBottomBox ul li img{width: 100%; padding: 15% 28%; box-sizing: border-box;}
-.skill .skillBottomBox ul li p{text-align: center; font-size: 24px;}
+.skill .skillBottomBox ul li p{text-align: center; font-size: 24px; font-weight: 500;}
 
 .skill .skillBottomBox .crossBox{display: flex; justify-content: center; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%;}
 .skill .skillBottomBox .crossBox .imgBox{width: 20%;}
 .skill .skillBottomBox .crossBox img{padding: 30%; box-sizing: border-box; width: 100%;}
 
+#skillList li {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
 
+#skillList li.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#skillList li.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /* clonecoding */
@@ -166,6 +179,13 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 .clonecoding ul li img{width: 100%; height: 100%; object-fit: cover; transition: all 0.5s;}
 .clonecoding ul li:nth-child(4) img{width: 100%;}
 .clonecoding ul li a{position: relative; overflow: hidden; border-radius: 20px; transition: all 0.4s;}  
+.clonecoding ul li a .titleBox{bottom: -50%; left: 0; width: 100%; position: absolute; background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(238, 238, 238, 0.3)); backdrop-filter: blur(10px); transition: all 0.5s; font-size: 18px; font-weight: 700;}
+.clonecoding ul li a .titleBox .titleWrap{display: flex; justify-content: space-between; margin: 20px 25px;}
+.clonecoding ul li a:hover .titleBox{bottom: 0; transition: all 0.5s;}
+.clonecoding ul li a:hover .titleBox .arrowBox{position: relative;}
+.clonecoding ul li a:hover .titleBox .arrowBox:before{content: ''; display: block; position: absolute; border: 1px solid #2e2e2e; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%;}
+.clonecoding ul li:nth-child(1) a:before:nth-child(1){content: '사람들에게'; color: #000;}
+
 .clonecoding ul li:nth-child(1) a:nth-child(1){width: 38.5%;}
 .clonecoding ul li:nth-child(1) a:nth-child(2){width: 58.5%;}
 .clonecoding ul li:nth-child(2) a:nth-child(1){width: 58.5%;}
@@ -173,11 +193,7 @@ header.active .menu span:nth-child(3){transform: rotate(-45deg); margin: 0; tran
 .clonecoding ul li:nth-child(3) a:nth-child(1){width: 38.5%;}
 .clonecoding ul li:nth-child(3) a:nth-child(2){width: 58.5%;}
 .clonecoding ul li a:hover img{transform: scale(1.1); transition: all 0.5s;} 
-
-.clonecoding ul li a:after{content: ''; width: 100%; height: 100%; background: #fff; position: absolute; left: 0; top: 0; transition: all 0.8s; z-index: inherit; z-index: 3;}
-.clonecoding ul li a.active :before{height: 0px;}
-.clonecoding ul li a.active:after{height: 0px;}
-
+.clonecoding ul li a:hover::before{bottom: 0;}
 
 
 /* teamProject */
@@ -257,6 +273,9 @@ footer .footerWrap .footerInner .footerContact img{width: 100%;margin-top: 50px;
 .clonecodingWrap.motion .title{animation-name: titleUp; animation-duration: 2s;}
 .clonecodingWrap.motion ul{animation-name: titleUp; animation-duration: 2.6s;}
 
+.teamProject .conList .con01 .conWrap .title{animation-name: titleUp; animation-duration: 1.2s;}
+.teamProject .conList .con03 .conWrap .title{animation-name: titleUp; animation-duration: 1.2s;}
+
 footer .footerWrap .conWrap.on h2{animation-name: titleUp; animation-duration: 1.2s;}
 footer .footerWrap .conWrap.on span{animation-name: titleUp; animation-duration: 1.4s;}
 footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1.6s;}
@@ -268,14 +287,14 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
 }
 
 /* 스플릿팅 */
-.main.motion .mainTitle h2 .char { display: inline-block;
+.mainTitleBox.motion  .mainTitle h2 .char { display: inline-block;
     animation: slide-up 1s cubic-bezier(.10, 0, .10, 1) both;
     animation-delay: calc(30ms * var(--char-index));
 }
 
-.main.motion .mainTitle{animation-name: titleUp; animation-duration: 1.2s}
-.main.motion .more{animation-name: titleUp; animation-duration: 1.4s}
-.main.motion .designed{animation-name: titleUp; animation-duration: 1.6s}
+.mainTitleBox.motion .mainTitle{animation-name: titleUp; animation-duration: 1.2s}
+.mainTitleBox.motion .more{animation-name: titleUp; animation-duration: 1.4s}
+.mainTitleBox.motion .designed{animation-name: titleUp; animation-duration: 1.6s}
 
 @keyframes slide-up {
 0% {transform: translateY(30px); opacity: 0;}
@@ -284,7 +303,21 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
 
 
 @media screen and (max-width:1300px){
+  .main .mainTitle h2{font-size: 90px;}
+  .main .designed {font-size: 9px; width: 30%;}
+  header .headerWrap ul li{font-size: 0.8rem;}
+  header .headerTab ul li{font-size: 12px;}
 
+  .title h2{font-size: 60px;}
+  .title .subTitle{font-size: 18px;}
+
+  .aboutMe ul li .tit{font-size: 24px;}
+  .aboutMe ul li .txt{font-size: 18px;}
+  .skill .skillBottomBox ul li p {font-size: 18px;}
+
+  .teamProjectWrap .title h2{font-size: 40px;}
+  .teamProject .conList .con03 .conWrap .title h2{font-size: 35px;}
+  .teamProject .conList .con03 .conWrap .title h2 span{font-size: 120px;}
 }
 
 @media screen and (max-width:1024px){
