@@ -422,7 +422,7 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
   header .headerTab .headerTabInner{margin: 0 34px 0 120px;}
   header .headerWrap ul li{font-size: 8px;}
 
-  .main{height: auto; margin-bottom: 300px;}
+  .main{height: auto; margin-bottom: 250px;}
   .main .mainTitle p{font-size: 45px;}
   .main .mainTitle h2{font-size:65px;}
   .main .showBox{margin: 35px auto 20px;}
