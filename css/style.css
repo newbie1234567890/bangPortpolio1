@@ -422,7 +422,7 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
   header .headerTab .headerTabInner{margin: 0 34px 0 120px;}
   header .headerWrap ul li{font-size: 8px;}
 
-  .main{height: auto; margin-bottom: 500px;}
+  .main{height: auto; margin-bottom: 300px;}
   .main .mainTitle p{font-size: 45px;}
   .main .mainTitle h2{font-size:65px;}
   .main .showBox{margin: 35px auto 20px;}
@@ -436,7 +436,10 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
   .title .more{width: 100px; height: 35px; font-size: 12px;}
   .title .chap {margin-bottom: 12px; width: 120px; font-size: 16px;}
 
+  .skill{margin: 150px auto 0;}
   .skill .skillBottomBox ul li p{font-size: 14px;}
+
+  .clonecoding .clonecodingWrap {padding-top: 200px;}
 
   .teamProject .conList .con01 .conWrap > img{height: auto;}
 
@@ -531,7 +534,7 @@ footer .footerWrap .conWrap.on ul{animation-name: titleUp; animation-duration: 1
   footer .footerWrap .footerInner .footerBottom .date{font-size: 12px;}
 
   footer .footerWrap .footerInner{margin: 200px auto 0;}
-  footer .footerWrap .footerInner .footerTop .contactTitle .contactText {font-size: 10px;}
+  footer .footerWrap .footerInner .footerTop .contactTitle .contactText {display: none;}
   footer .footerWrap .footerInner .footerTop .contactTitle h2{font-size: 14px;}
   footer .footerWrap .footerInner .footerTop .adress h2{font-size: 14px;}
   footer .footerWrap .footerInner .footerTop .massage h2{font-size: 14px;}
